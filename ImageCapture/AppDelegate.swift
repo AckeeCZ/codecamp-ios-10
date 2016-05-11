@@ -16,8 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+        // ask for permissons
         let settings = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
+
+        if let notification = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [String: AnyObject] {
+            // handle incoming notification when app is dead
+        }
 
         let controller = ViewController()
         let navigationController = UINavigationController(rootViewController: controller)
@@ -38,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print("Failed to register:", error)
+    }
+
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject]) {
+        // handle incoming notification when app is active (https://github.com/hyperoslo/Whisper)
     }
 
     func applicationWillResignActive(application: UIApplication) {
