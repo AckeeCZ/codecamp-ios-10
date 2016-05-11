@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     weak var imageView: UIImageView!
 
@@ -44,10 +44,28 @@ class ViewController: UIViewController {
     }
 
     func takePhotoButtonTapped() {
-        print("take")
+
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .Camera
+
+        self.presentViewController(pickerController, animated: true, completion: nil)
     }
 
     func chooseFromLibraryButtonTapped() {
-        print("choose")
+
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .PhotoLibrary
+
+        self.presentViewController(pickerController, animated: true, completion: nil)
+    }
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+        print(info)
+        let pickedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imageView.image = pickedImage
+
+        picker.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }
