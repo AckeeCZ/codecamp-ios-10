@@ -11,8 +11,36 @@
 		17F48A8B1CE37DDD00541545 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F48A8A1CE37DDD00541545 /* ViewController.swift */; };
 		17F48A901CE37DDD00541545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F48A8F1CE37DDD00541545 /* Assets.xcassets */; };
 		17F48A931CE37DDD00541545 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F48A911CE37DDD00541545 /* LaunchScreen.storyboard */; };
+		17F48AA01CE38C4900541545 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F48A9F1CE38C4900541545 /* NotificationCenter.framework */; };
+		17F48AA31CE38C4900541545 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F48AA21CE38C4900541545 /* TodayViewController.swift */; };
+		17F48AA61CE38C4900541545 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F48AA41CE38C4900541545 /* MainInterface.storyboard */; };
+		17F48AAA1CE38C4900541545 /* PhotoWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 17F48A9E1CE38C4900541545 /* PhotoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D013B78D4D2C308D0EF2A43A /* Pods_ImageCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439A3BB765AFB1E51261B707 /* Pods_ImageCapture.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17F48AA81CE38C4900541545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17F48A7D1CE37DDD00541545 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17F48A9D1CE38C4900541545;
+			remoteInfo = PhotoWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		17F48AAE1CE38C4900541545 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				17F48AAA1CE38C4900541545 /* PhotoWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		17F48A851CE37DDD00541545 /* ImageCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +49,11 @@
 		17F48A8F1CE37DDD00541545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17F48A921CE37DDD00541545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F48A941CE37DDD00541545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F48A9E1CE38C4900541545 /* PhotoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PhotoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		17F48A9F1CE38C4900541545 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		17F48AA21CE38C4900541545 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		17F48AA51CE38C4900541545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		17F48AA71CE38C4900541545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		265CCB7E0CB0F6739D3D96E0 /* Pods-ImageCapture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageCapture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageCapture/Pods-ImageCapture.debug.xcconfig"; sourceTree = "<group>"; };
 		439A3BB765AFB1E51261B707 /* Pods_ImageCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C4D1CD389E28649D21CECCC /* Pods-ImageCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageCapture.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageCapture/Pods-ImageCapture.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +68,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17F48A9B1CE38C4900541545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17F48AA01CE38C4900541545 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				17F48A871CE37DDD00541545 /* ImageCapture */,
+				17F48AA11CE38C4900541545 /* PhotoWidget */,
 				17F48A861CE37DDD00541545 /* Products */,
 				5976C796C857C75858DD56AC /* Pods */,
 				FA5AAA8A9EA00400D1F091B1 /* Frameworks */,
@@ -52,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				17F48A851CE37DDD00541545 /* ImageCapture.app */,
+				17F48A9E1CE38C4900541545 /* PhotoWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +111,16 @@
 			path = ImageCapture;
 			sourceTree = "<group>";
 		};
+		17F48AA11CE38C4900541545 /* PhotoWidget */ = {
+			isa = PBXGroup;
+			children = (
+				17F48AA21CE38C4900541545 /* TodayViewController.swift */,
+				17F48AA41CE38C4900541545 /* MainInterface.storyboard */,
+				17F48AA71CE38C4900541545 /* Info.plist */,
+			);
+			path = PhotoWidget;
+			sourceTree = "<group>";
+		};
 		5976C796C857C75858DD56AC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				439A3BB765AFB1E51261B707 /* Pods_ImageCapture.framework */,
+				17F48A9F1CE38C4900541545 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,15 +152,34 @@
 				17F48A831CE37DDD00541545 /* Resources */,
 				B322E8D1D6EA47C2FC4951ED /* Embed Pods Frameworks */,
 				FEFA9977C6E04BD478CB5C8E /* Copy Pods Resources */,
+				17F48AAE1CE38C4900541545 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				17F48AA91CE38C4900541545 /* PBXTargetDependency */,
 			);
 			name = ImageCapture;
 			productName = ImageCapture;
 			productReference = 17F48A851CE37DDD00541545 /* ImageCapture.app */;
 			productType = "com.apple.product-type.application";
+		};
+		17F48A9D1CE38C4900541545 /* PhotoWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17F48AAD1CE38C4900541545 /* Build configuration list for PBXNativeTarget "PhotoWidget" */;
+			buildPhases = (
+				17F48A9A1CE38C4900541545 /* Sources */,
+				17F48A9B1CE38C4900541545 /* Frameworks */,
+				17F48A9C1CE38C4900541545 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoWidget;
+			productName = PhotoWidget;
+			productReference = 17F48A9E1CE38C4900541545 /* PhotoWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -119,6 +192,9 @@
 				ORGANIZATIONNAME = Ackee;
 				TargetAttributes = {
 					17F48A841CE37DDD00541545 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					17F48A9D1CE38C4900541545 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 				};
@@ -137,6 +213,7 @@
 			projectRoot = "";
 			targets = (
 				17F48A841CE37DDD00541545 /* ImageCapture */,
+				17F48A9D1CE38C4900541545 /* PhotoWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +225,14 @@
 			files = (
 				17F48A931CE37DDD00541545 /* LaunchScreen.storyboard in Resources */,
 				17F48A901CE37DDD00541545 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17F48A9C1CE38C4900541545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17F48AA61CE38C4900541545 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +296,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		17F48A9A1CE38C4900541545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17F48AA31CE38C4900541545 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17F48AA91CE38C4900541545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17F48A9D1CE38C4900541545 /* PhotoWidget */;
+			targetProxy = 17F48AA81CE38C4900541545 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		17F48A911CE37DDD00541545 /* LaunchScreen.storyboard */ = {
@@ -220,6 +321,14 @@
 				17F48A921CE37DDD00541545 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		17F48AA41CE38C4900541545 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17F48AA51CE38C4900541545 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -315,6 +424,7 @@
 			baseConfigurationReference = 265CCB7E0CB0F6739D3D96E0 /* Pods-ImageCapture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ImageCapture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.enterprise.ImageCapture;
@@ -327,10 +437,33 @@
 			baseConfigurationReference = 4C4D1CD389E28649D21CECCC /* Pods-ImageCapture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ImageCapture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.enterprise.ImageCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		17F48AAB1CE38C4900541545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PhotoWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.enterprise.ImageCapture.PhotoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		17F48AAC1CE38C4900541545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PhotoWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.ackee.enterprise.ImageCapture.PhotoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -354,6 +487,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		17F48AAD1CE38C4900541545 /* Build configuration list for PBXNativeTarget "PhotoWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17F48AAB1CE38C4900541545 /* Debug */,
+				17F48AAC1CE38C4900541545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
