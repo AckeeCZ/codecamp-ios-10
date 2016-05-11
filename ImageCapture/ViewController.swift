@@ -10,16 +10,44 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    weak var imageView: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        view.backgroundColor = .whiteColor()
+
+        let imageView = UIImageView()
+        imageView.backgroundColor = .grayColor()
+
+        let takePhotoButton = UIButton()
+        takePhotoButton.setTitleColor(.blueColor(), forState: .Normal)
+        takePhotoButton.setTitle("Take photo", forState: .Normal)
+        takePhotoButton.addTarget(self, action: #selector(ViewController.takePhotoButtonTapped), forControlEvents: .TouchUpInside)
+
+        let chooseFromLibraryButton = UIButton()
+        chooseFromLibraryButton.setTitleColor(.blueColor(), forState: .Normal)
+        chooseFromLibraryButton.setTitle("Choose from library", forState: .Normal)
+        chooseFromLibraryButton.addTarget(self, action: #selector(ViewController.chooseFromLibraryButtonTapped), forControlEvents: .TouchUpInside)
+
+        let stackView = UIStackView(arrangedSubviews: [imageView, takePhotoButton, chooseFromLibraryButton])
+        stackView.axis = .Vertical
+        view.addSubview(stackView)
+        stackView.snp_makeConstraints { make in
+            make.center.equalTo(0)
+        }
+
+        imageView.snp_makeConstraints { make in
+            make.width.height.equalTo(view.snp_width).offset(-40)
+        }
+        self.imageView = imageView
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func takePhotoButtonTapped() {
+        print("take")
     }
 
-
+    func chooseFromLibraryButtonTapped() {
+        print("choose")
+    }
 }
-
