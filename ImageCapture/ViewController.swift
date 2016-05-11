@@ -22,6 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
         let takePhotoButton = UIButton()
         takePhotoButton.setTitleColor(.blueColor(), forState: .Normal)
+        takePhotoButton.setTitleColor(.grayColor(), forState: .Disabled)
         takePhotoButton.setTitle("Take photo", forState: .Normal)
         takePhotoButton.addTarget(self, action: #selector(ViewController.takePhotoButtonTapped), forControlEvents: .TouchUpInside)
 
@@ -41,6 +42,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             make.width.height.equalTo(view.snp_width).offset(-40)
         }
         self.imageView = imageView
+
+        // check camera availibility
+        if !UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            takePhotoButton.enabled = false
+        }
     }
 
     func takePhotoButtonTapped() {
@@ -48,6 +54,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         pickerController.sourceType = .Camera
+        pickerController.allowsEditing = true
+        // pickerController.showsCameraControls = false
+
+        let overlay = UIView(frame: CGRectMake(0, 0, 300, 100))
+        overlay.backgroundColor = .greenColor()
+
+        pickerController.cameraOverlayView = overlay
 
         self.presentViewController(pickerController, animated: true, completion: nil)
     }
