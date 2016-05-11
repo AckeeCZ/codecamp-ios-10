@@ -16,8 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+        let likeAction = UIMutableUserNotificationAction()
+        likeAction.identifier = "LIKE"
+        likeAction.title = "Like"
+        likeAction.activationMode = .Foreground
+
+        let postCategory = UIMutableUserNotificationCategory()
+        postCategory.identifier = "POST_CATEGORY"
+        postCategory.setActions([likeAction], forContext: .Default)
+
         // ask for permissons
-        let settings = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
+        let settings = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: [postCategory])
         application.registerUserNotificationSettings(settings)
 
         if let notification = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [String: AnyObject] {
@@ -47,6 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject]) {
         // handle incoming notification when app is active (https://github.com/hyperoslo/Whisper)
+    }
+
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject: AnyObject], completionHandler: () -> Void) {
+
+        if identifier == "LIKE" {
+            // handle like 👍
+        }
+
+        completionHandler()
     }
 
     func applicationWillResignActive(application: UIApplication) {
