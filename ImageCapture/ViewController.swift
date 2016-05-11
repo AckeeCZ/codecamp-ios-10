@@ -31,7 +31,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         chooseFromLibraryButton.setTitle("Choose from library", forState: .Normal)
         chooseFromLibraryButton.addTarget(self, action: #selector(ViewController.chooseFromLibraryButtonTapped), forControlEvents: .TouchUpInside)
 
-        let stackView = UIStackView(arrangedSubviews: [imageView, takePhotoButton, chooseFromLibraryButton])
+        let shareButton = UIButton()
+        shareButton.setTitleColor(.blueColor(), forState: .Normal)
+        shareButton.setTitle("Share", forState: .Normal)
+        shareButton.addTarget(self, action: #selector(ViewController.shareButtonTapped), forControlEvents: .TouchUpInside)
+
+        let stackView = UIStackView(arrangedSubviews: [imageView, takePhotoButton, chooseFromLibraryButton, shareButton])
         stackView.axis = .Vertical
         view.addSubview(stackView)
         stackView.snp_makeConstraints { make in
@@ -80,5 +85,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = pickedImage
 
         picker.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func shareButtonTapped() {
+
+        guard let image = imageView.image else {
+            return
+        }
+
+        let text = "Look at my awesome photo!"
+        let url = NSURL(string: "http://awesomephotos.com/dvbzwoop1j34")!
+
+        let shareController = UIActivityViewController(activityItems: [image, url, text], applicationActivities: nil)
+        self.presentViewController(shareController, animated: true, completion: nil)
     }
 }
